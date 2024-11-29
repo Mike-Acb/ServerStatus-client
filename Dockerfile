@@ -11,7 +11,8 @@ ADD https://raw.githubusercontent.com/zdz/ServerStatus-Rust/refs/heads/master/cl
 # Set environment variables for configuration
 ENV SERVER_URL="http://127.0.0.1:8080/report"
 ENV USER="h1"
+ENV GID="g1"
 ENV PASSWORD="p1"
 
 # Command to run the script
-CMD ["sh", "-c", "python3 stat_client.py -a $SERVER_URL -u $USER -p $PASSWORD"]
+CMD ["sh", "-c", "python3 stat_client.py -a $SERVER_URL -u $USER  -g $GID -p $PASSWORD"]
