@@ -15,4 +15,4 @@ ENV GID="g1"
 ENV PASSWORD="p1"
 
 # Command to run the script
-CMD ["sh", "-c", "python3 stat_client.py -a $SERVER_URL -u $USER  -g $GID -p $PASSWORD"]
+CMD ["sh", "-c", "python3 stat_client.py -a $SERVER_URL -u $USER  -p $PASSWORD"]
