@@ -3,7 +3,11 @@ FROM python:3.9-slim
 WORKDIR /app
 
 # Install required packages
-RUN pip3 install --no-cache-dir psutil requests py-cpuinfo
+RUN apt-get update && \
+    apt-get install -y vnstat && \
+    pip3 install --no-cache-dir psutil requests py-cpuinfo && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* \
 
 # Copy the client script
 ADD https://raw.githubusercontent.com/zdz/ServerStatus-Rust/refs/heads/master/client/stat_client.py .
